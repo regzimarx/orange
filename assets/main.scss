@@ -1,0 +1,191 @@
+/* ========================================
+GENERAL
+============================================= */
+
+* {
+  letter-spacing: 0 !important;
+}
+
+/* ========================================
+CART
+============================================= */
+
+// Free shipping bar
+
+#CartDrawer {
+  overflow-y: auto;
+  z-index: 15;
+
+  .htusb-ui-cart-boost {
+    display: none;
+  }
+
+  .drawer__inner {
+    height: auto;
+    min-height: 100%;
+    width: 50rem;
+    max-width: 100%;
+    .drawer__header {
+      .drawer__close {
+        right: 0;
+      }
+    }
+    #free-shipping-bar {
+      .progress-message {
+        * {
+          font-size: 1.4rem !important;
+        }
+      }
+      .progress-bar {
+        margin: 10px auto;
+        padding: 0;
+        width: 100%;
+        height: 15px;
+        overflow: hidden;
+        background: #dad1ca;
+        .bar {
+          display: block;
+          position: relative;
+          float: left;
+          min-width: 1%;
+          height: 100%;
+          background: #785e4b;
+        }
+      }
+    }
+    cart-drawer-items {
+      #CartDrawer-Form {
+        #CartDrawer-CartItems {
+          .drawer__cart-items-wrapper {
+            .cart-items {
+              tbody {
+                .cart-item {
+                  .cart-item__details {
+                    .h4 {
+                      font-weight: 500;
+                      letter-spacing: 0px;
+                      font-size: calc(var(--font-heading-scale) * 1.4rem);
+                    }
+                    .product-option {
+                      color: #000;
+                      font-size: 1.3rem;
+                    }
+                  }
+                  .cart-item__quantity {
+                    .cart-item__quantity-wrapper {
+                      .quantity {
+                        height: calc((var(--inputs-border-width) * 2) + 0px);
+                        &::after {
+                          border-radius: 20px;
+                        }
+                      }
+                    }
+                  }
+                  .cart-item__totals {
+                    .cart-item__price-wrapper {
+                      .price {
+                        color: #000;
+                        font-weight: 700;
+                        font-size: 1.7rem !important;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .drawer__footer {
+      .usp-text {
+        p {
+          border: 1px solid #004aad;
+          color: #000;
+          font-weight: 500;
+        }
+      }
+      .cart-drawer__footer {
+        .totals {
+          .totals__subtotal-value {
+            color: #000;
+            font-weight: 700;
+            font-size: 1.7rem !important;
+          }
+        }
+      }
+      .cart__ctas {
+        .cart__checkout-button {
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #fff;
+          background-image: linear-gradient(to right top, #785e4b, #6b503b, #5e422c, #51341d, #44270f);
+          height: 60px;
+          font-weight: 800;
+          font-size: 2rem;
+          &::after {
+            box-shadow: none;
+          }
+        }
+      }
+      .footer__payment {
+        .list {
+          .list-payment__item {
+            svg {
+              width: 28px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .upsell-row {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .drawer__header {
+    background: rgb(233, 233, 233) !important;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    justify-content: center !important;
+    margin-bottom: 1rem;
+  }
+  .drawer__heading {
+    margin: 0 !important;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .drawer__inner {
+    overflow-x: hidden !important;
+  }
+
+  .progress-message p {
+    margin: 0;
+    line-height: 1em;
+  }
+
+  .flex-success-free {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    justify-content: center;
+  }
+  .progress-bar {
+    margin-bottom: 1rem;
+  }
+
+  .progress-bar progress {
+    width: 100%;
+    display: block;
+  }
+
+  .progress-price {
+    display: flex;
+    justify-content: space-between;
+  }
+}

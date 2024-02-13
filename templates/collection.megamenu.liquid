@@ -1,0 +1,72 @@
+{% layout none %}
+{% assign ratio = 0.8 %}
+
+<div class="mega-contents">
+  <div class="mega-row">
+    {% comment %}
+      <div>
+          <div class="mega-item">
+              {% render 'card-collection', card_collection: collection, no_text: true, media_aspect_ratio: 'square', columns: 1 %}
+          </div>
+      </div>
+    {% endcomment %}
+    <div>
+      <div class="mega-slider">
+        <div class="grid grid--1-col-tablet-down grid--3-col-desktop slider slider--desktop">
+          {% for product in collection.products %}
+            <div class="grid__item slider__slide">
+              <div class="mega-item">
+                {% if product.metafields.details.badge_text %}
+                  <span
+                    id="Badge-{{ section_id }}-{{ product.id }}"
+                    class="product-badge badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
+                  >
+                    {{- product.metafields.details.badge_text -}}
+                  </span>
+                {% endif %}
+                <div
+                  class="media media--transparent media--adapt"
+                  style="padding-bottom: 100%;"
+                >
+                  <img
+                    src="{{ product.featured_media | image_url: width: 300 }}"
+                    alt="{{ product.featured_media.alt | escape }}"
+                    loading="lazy"
+                    width="150"
+                    height="{{ 150 | divided_by: product.featured_media.aspect_ratio | ceil }}"
+                  >
+                </div>
+                <a href="{{ product.url }}" class="button button--primary button--full-width">{{ product.title }}</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div
+          class="slider-buttons no-js-hidden"
+          {% if collection.all_products_count < 4 %}
+            hidden
+          {% endif %}
+        >
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+            aria-controls="Slider-{{ section.id }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+            aria-controls="Slider-{{ section.id }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
