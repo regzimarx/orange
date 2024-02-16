@@ -1,0 +1,14 @@
+{% if settings.enable_cart_cross_sell %}
+  {% if settings.cross_sell_heading %}
+    <h3 class="h2">{{ settings.cross_sell_heading }}</h3>
+  {% endif %}
+  <div class="grid">
+    {% if settings.cross_sell_collection %}
+      {% for product in settings.cross_sell_collection %}
+        <div class="grid__item">
+          {{ product.title }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endif %}

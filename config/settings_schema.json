@@ -1544,14 +1544,25 @@
         "default": "#999999"
       },
       {
+        "type": "header",
+        "content": "Cart Cross-sell"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_cart_cross_sell",
+        "label": "Enable cart cross-sell",
+        "default": true
+      },
+      {
         "type": "inline_richtext",
-        "id": "upsell_heading",
-        "label": "Upsell heading"
+        "id": "cross_sell_heading",
+        "label": "Cross-sell heading",
+        "default": "Other customers also bought..."
       },
       {
         "type": "collection",
-        "id": "upsell_list",
-        "label": "Upsell list"
+        "id": "cross_sell_collection",
+        "label": "Cross-sell collection"
       }
     ]
   }
