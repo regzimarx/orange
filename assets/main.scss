@@ -42,14 +42,12 @@ CART
         width: 100%;
         height: 15px;
         overflow: hidden;
-        background: #dad1ca;
         .bar {
           display: block;
           position: relative;
           float: left;
           min-width: 1%;
           height: 100%;
-          background: #785e4b;
         }
       }
     }
@@ -75,8 +73,12 @@ CART
                     .cart-item__quantity-wrapper {
                       .quantity {
                         height: calc((var(--inputs-border-width) * 2) + 0px);
+                        min-height: calc((var(--inputs-border-width) * 2) + 3.5rem);
                         &::after {
                           border-radius: 20px;
+                        }
+                        .quantity__input {
+                          font-size: 1.4rem;
                         }
                       }
                     }
@@ -109,8 +111,12 @@ CART
         .totals {
           .totals__subtotal-value {
             color: #000;
-            font-weight: 700;
-            font-size: 1.7rem !important;
+            font-weight: bold;
+            font-size: 1.6rem;
+          }
+          .totals__total-value {
+            color: #000;
+            font-weight: bold;
           }
         }
       }
@@ -118,8 +124,6 @@ CART
         .cart__checkout-button {
           font-weight: bold;
           text-transform: uppercase;
-          color: #fff;
-          background-image: linear-gradient(to right top, #785e4b, #6b503b, #5e422c, #51341d, #44270f);
           height: 60px;
           font-weight: 800;
           font-size: 2rem;

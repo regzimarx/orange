@@ -33,10 +33,7 @@
           "type": "megamenu",
           "settings": {
             "menu_name": "Products",
-            "megamenu_link": "products",
-            "collections": [
-
-            ]
+            "megamenu_link": "products"
           }
         }
       },

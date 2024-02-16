@@ -117,8 +117,8 @@
           </div>
           {% assign price_threshold = settings.threshold | times: 100.00 %}
           {% assign progress_width = cart.total_price | divided_by: price_threshold | times: 100 %}
-          <div class="progress-bar">
-            <div class="bar" style="width: {{ progress_width }}%"></div>
+          <div class="progress-bar" style="background-color: {{ settings.progress_bar_color }};">
+            <div class="bar" style="width: {{ progress_width }}%; background-color: {{ settings.bar_color }};"></div>
           </div>
         </div>
       {% endunless %}

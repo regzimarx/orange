@@ -1532,6 +1532,18 @@
         "default": "You've unlocked <strong>FREE SHIPPING!<\/strong>"
       },
       {
+        "type": "color",
+        "id": "progress_bar_color",
+        "label": "Progress bar color",
+        "default": "#eeeeee"
+      },
+      {
+        "type": "color",
+        "id": "bar_color",
+        "label": "PBar color",
+        "default": "#999999"
+      },
+      {
         "type": "inline_richtext",
         "id": "upsell_heading",
         "label": "Upsell heading"
