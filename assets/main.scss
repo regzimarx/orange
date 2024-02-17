@@ -192,4 +192,21 @@ CART
     display: flex;
     justify-content: space-between;
   }
+
+  #cart-cross-sell {
+    .grid {
+      border: 1px solid #333;
+      .grid__item {
+        flex-direction: row;
+        display: flex;
+        border-bottom: 1px solid #333;
+        padding: 2rem;
+        .media {
+          img {
+            position: relative;
+          }
+        }
+      }
+    }
+  }
 }
