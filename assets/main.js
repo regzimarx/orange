@@ -59,21 +59,4 @@ document.addEventListener('DOMContentLoaded', () => {
         megaSlide();
       });
   }
-
-  // CART CROSS-SELL
-
-  // Get all cross-sell items and add click event
-  // document.querySelectorAll('#cart-cross-sell .grid .grid__item').forEach((item) => {
-  //   // Get all select of cross-sell items
-  //   var selects = item.querySelectorAll('select');
-  //   selects.forEach((select) => {
-  //     select.addEventListener('change', (e) => {
-  //       // Get current variant from url
-  //       var variant_input = item.querySelector('.product .product-form form input[name=id]');
-  //       const queryString = window.location.search;
-  //       const urlParams = new URLSearchParams(queryString);
-  //       variant_input.value = urlParams.get('variant');
-  //     });
-  //   });
-  // });
 });

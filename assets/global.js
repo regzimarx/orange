@@ -1178,6 +1178,16 @@ class VariantSelects extends HTMLElement {
           },
         });
       });
+
+    // Update cart cross sell image
+
+    const product_images = this.parentNode.parentNode.querySelectorAll('.image img');
+    product_images.forEach((image) => {
+      image.classList.remove('is-active');
+      if (this.currentVariant.featured_media.id == image.dataset.mediaId) {
+        image.classList.add('is-active');
+      }
+    });
   }
 
   toggleAddButton(disable = true, text, modifyClass = true) {

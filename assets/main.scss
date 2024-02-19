@@ -23,8 +23,9 @@ CART
   .drawer__inner {
     height: auto;
     min-height: 100%;
-    width: 50rem;
+    width: 55rem;
     max-width: 100%;
+    padding: 0 2rem;
     .drawer__header {
       .drawer__close {
         right: 0;
@@ -201,10 +202,28 @@ CART
         display: flex;
         border-bottom: 1px solid #333;
         padding: 2rem;
-        .media {
-          img {
-            position: relative;
+        .product-form__input {
+          margin-top: 2rem;
+        }
+        .product-form__buttons {
+          margin-top: 2rem;
+        }
+        .image {
+          flex: 0 0 230px;
+          @media screen and (max-width: 750px){
+            flex: 0 0 150px;
           }
+          img {
+            width: 100%;
+            height: auto;
+            display: none;
+            &.is-active {
+              display: block;
+            }
+          }
+        }
+        .form {
+          flex: 1;
         }
       }
     }
