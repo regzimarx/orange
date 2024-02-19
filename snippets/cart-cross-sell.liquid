@@ -31,6 +31,7 @@
                     width="{{ media.width }}"
                     height="{{ media.height }}"
                     data-media-id="{{ media.id }}"
+                    style="{% if product.has_only_default_variant %}display: block;{% endif %}"
                   >
                 {% endfor %}
               </div>
