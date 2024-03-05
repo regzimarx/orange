@@ -70,10 +70,52 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collections_list_slider_dWhEJc": {
+      "type": "collections-list-slider",
+      "blocks": {
+        "featured_collection_AKrahF": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "featured_collection_QTTKVn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hydrogen"
+          }
+        },
+        "featured_collection_UPVRix": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "products"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_AKrahF",
+        "featured_collection_QTTKVn",
+        "featured_collection_UPVRix"
+      ],
+      "settings": {
+        "custom_class": "",
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner",
-    "collection_slider_WmnrLx"
+    "collection_slider_WmnrLx",
+    "collections_list_slider_dWhEJc"
   ]
 }
