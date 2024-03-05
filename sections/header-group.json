@@ -2,21 +2,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "scrolling_texts_E43c8U": {
-      "type": "scrolling-texts",
-      "settings": {
-        "custom_class": "scrolling-announcement-bar",
-        "color_scheme": "",
-        "text": "SAVE 20% OFF  FREE SHIPPING WHEN YOU AUTO-SHIP THE PRODUCTS",
-        "link": "",
-        "text_size": 18,
-        "text_spacing": true,
-        "direction": "left",
-        "speed": 630,
-        "show_on_mobile": true,
-        "show_on_desktop": true
-      }
-    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -73,7 +58,6 @@
     }
   },
   "order": [
-    "scrolling_announcement_bar_E43c8U",
     "announcement-bar",
     "header"
   ]
