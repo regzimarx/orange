@@ -2,6 +2,21 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "scrolling_texts_mLpKzm": {
+      "type": "scrolling-texts",
+      "settings": {
+        "custom_class": "",
+        "color_scheme": "",
+        "text": "Free shipping and returns",
+        "link": "",
+        "text_size": 18,
+        "text_spacing": true,
+        "direction": "left",
+        "speed": 600,
+        "show_on_mobile": true,
+        "show_on_desktop": true
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -58,6 +73,7 @@
     }
   },
   "order": [
+    "scrolling_texts_mLpKzm",
     "announcement-bar",
     "header"
   ]
