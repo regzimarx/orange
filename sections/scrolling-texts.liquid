@@ -1,51 +1,57 @@
 <div class="{{ section.settings.custom_class }}">
   {% style %}
+    .scrolling-text--{{ section.id }} {
+      --move-speed: {{ section.settings.speed }}s;
+    }
+
+    .scrolling-text--{{ section.id }} span {
+      font-size: {{ section.settings.text_size }}px;
+    }
+
+    {% if section.settings.color_scheme == 'button' %}
       .scrolling-text--{{ section.id }} {
-        --move-speed: {{ section.settings.speed }}s;
+        background: {{ settings.color_button }};
+        color: {{ settings.color_button_text }};
+      }
+    {% endif %}
+
+    {% if section.settings.show_on_mobile == true %}
+      .scrolling-texts {
+        display: block;
       }
 
-      .scrolling-text--{{ section.id }} span {
-        font-size: {{ section.settings.text_size }}px;
-      }
-
-      {% if section.settings.color_scheme == 'button' %}
-        .scrolling-text--{{ section.id }} {
-          background: {{ settings.color_button }};
-          color: {{ settings.color_button_text }};
-        }
-      {% endif %}
-
-      {% if section.settings.show_on_mobile == true %}
-        .scrolling-announcement-bar {
-          display: block;
-        }
-
-        @media screen and (min-width: 750px){
-          .scrolling-announcement-bar {
-            display: none;
-          }
-        }
-      {% endif %}
-
-      .scrolling-announcement-bar {
-        overflow: hidden;
-      }
-
-      {% if section.settings.show_on_desktop == true %}
-        .scrolling-announcement-bar {
+      @media screen and (min-width: 750px){
+        .scrolling-texts {
           display: none;
         }
+      }
+    {% endif %}
 
-        @media screen and (min-width: 750px){
-          .scrolling-announcement-bar {
-            display: block;
-          }
-        }
-      {% endif %}
+    .scrolling-texts {
+      overflow: hidden;
+    }
 
-      {% if section.settings.show_on_mobile == false and section.settings.show_on_desktop == false %}
-      .scrolling-announcement-bar {
+    {% if section.settings.show_on_desktop == true %}
+      .scrolling-texts {
         display: none;
+      }
+
+      @media screen and (min-width: 750px){
+        .scrolling-texts {
+          display: block;
+        }
+      }
+    {% endif %}
+
+    {% if section.settings.show_on_mobile == false and section.settings.show_on_desktop == false %}
+      .scrolling-texts {
+        display: none;
+      }
+    {% endif %}
+
+    {% if section.settings.show_on_mobile == true and section.settings.show_on_desktop == true %}
+      .scrolling-texts {
+        display: block;
       }
     {% endif %}
   {% endstyle %}
@@ -53,7 +59,7 @@
   {% if section.settings.link != blank %}
     <a href="{{ section.settings.link }}" style="font-size: {{ section.settings.text_size }}px">
   {% endif %}
-  <div class="scrolling-announcement-bar scrolling-text scrolling-text--{{ section.id }} color-{{ section.settings.color_scheme }} gradient">
+  <div class="scrolling-texts scrolling-text--{{ section.id }} color-{{ section.settings.color_scheme }} gradient">
     <div
       class="scrolling-text__inner scrolling-text__inner--{{ section.settings.direction }}"
       aria-hidden="true"
@@ -72,7 +78,7 @@
 
 {% schema %}
 {
-  "name": "Scrolling announcement",
+  "name": "Scrolling texts",
   "class": "index-section--flush",
   "settings": [
     {
@@ -101,7 +107,7 @@
       "type": "range",
       "id": "text_size",
       "label": "Text size",
-      "default": 70,
+      "default": 18,
       "min": 12,
       "max": 150,
       "step": 2,
@@ -133,7 +139,7 @@
       "type": "range",
       "id": "speed",
       "label": "Speed",
-      "default": 200,
+      "default": 600,
       "min": 50,
       "max": 1000,
       "step": 10,
@@ -143,16 +149,18 @@
       "type": "checkbox",
       "id": "show_on_mobile",
       "label": "Show on mobile"
+      "default": true
     },
     {
       "type": "checkbox",
       "id": "show_on_desktop",
       "label": "Show on desktop"
+      "default": true
     }
   ],
   "presets": [
     {
-      "name": "Scrolling anouncement"
+      "name": "Scrolling texts"
     }
   ],
   "disabled_on": {

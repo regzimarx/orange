@@ -2,8 +2,8 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "scrolling_announcement_bar_E43c8U": {
-      "type": "scrolling-announcement-bar",
+    "scrolling_texts_E43c8U": {
+      "type": "scrolling-texts",
       "settings": {
         "custom_class": "scrolling-announcement-bar",
         "color_scheme": "",
