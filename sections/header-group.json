@@ -10,10 +10,17 @@
           "settings": {
             "text": "FREE SHIPPING AND RETURNS"
           }
+        },
+        "text_K8wbDR": {
+          "type": "text",
+          "settings": {
+            "text": "20% OFF ON FIRST PURCHASE"
+          }
         }
       },
       "block_order": [
-        "text_NDK6yQ"
+        "text_NDK6yQ",
+        "text_K8wbDR"
       ],
       "settings": {
         "custom_class": "",
