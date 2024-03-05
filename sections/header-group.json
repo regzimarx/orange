@@ -2,6 +2,21 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "scrolling_announcement_bar_E43c8U": {
+      "type": "scrolling-announcement-bar",
+      "settings": {
+        "custom_class": "scrolling-announcement-bar",
+        "color_scheme": "",
+        "text": "Free shipping and returns",
+        "link": "",
+        "text_size": 70,
+        "text_spacing": true,
+        "direction": "left",
+        "speed": 200,
+        "show_on_mobile": false,
+        "show_on_desktop": false
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -58,6 +73,7 @@
     }
   },
   "order": [
+    "scrolling_announcement_bar_E43c8U",
     "announcement-bar",
     "header"
   ]
