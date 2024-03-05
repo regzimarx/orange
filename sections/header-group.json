@@ -7,14 +7,14 @@
       "settings": {
         "custom_class": "scrolling-announcement-bar",
         "color_scheme": "",
-        "text": "Free shipping and returns",
+        "text": "SAVE 20% OFF  FREE SHIPPING WHEN YOU AUTO-SHIP THE PRODUCTS",
         "link": "",
-        "text_size": 70,
+        "text_size": 18,
         "text_spacing": true,
         "direction": "left",
-        "speed": 200,
-        "show_on_mobile": false,
-        "show_on_desktop": false
+        "speed": 630,
+        "show_on_mobile": true,
+        "show_on_desktop": true
       }
     },
     "announcement-bar": {
