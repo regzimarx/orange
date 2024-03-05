@@ -4,6 +4,17 @@
   "sections": {
     "scrolling_texts_mLpKzm": {
       "type": "scrolling-texts",
+      "blocks": {
+        "text_NDK6yQ": {
+          "type": "text",
+          "settings": {
+            "text": "FREE SHIPPING AND RETURNS"
+          }
+        }
+      },
+      "block_order": [
+        "text_NDK6yQ"
+      ],
       "settings": {
         "custom_class": "",
         "color_scheme": "",
