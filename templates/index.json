@@ -27,7 +27,7 @@
         "button"
       ],
       "settings": {
-        "custom_class": "",
+        "custom_class": "main-image-banner",
         "image": "shopify:\/\/shop_images\/orange-desktop-banner.jpg",
         "image_2": "shopify:\/\/shop_images\/orange-mobile-banner.jpg",
         "image_overlay_opacity": 0,

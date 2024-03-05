@@ -258,3 +258,93 @@ SCROLLING ANIMATION
   animation: scrolling-texts var(--move-speed) linear infinite;
   animation-play-state: running;
 }
+
+/* ========================================
+MAIN IMAGE BANNER
+============================================= */
+
+.main-image-banner {
+  .banner {
+    height: 50rem;
+    @media screen and (min-width: 750px) {
+      height: auto;
+    }
+  }
+  .desktop-media {
+    display: none;
+    @media screen and (min-width: 750px) {
+      display: block;
+      width: 100%;
+    }
+  }
+  .mobile-media {
+    display: block;
+    width: 100%;
+    img {
+      position: relative !important;
+    }
+    &::before {
+      padding-bottom: 0 !important;
+    }
+    @media screen and (min-width: 750px) {
+      display: none;
+    }
+  }
+  .banner--content-align-left.banner--desktop-transparent .banner__box {
+    min-width: 45rem;
+    max-width: 45rem;
+  }
+  .banner__content {
+    align-items: flex-start;
+    @media screen and (min-width: 750px) {
+      padding-left: 1rem;
+      padding-top: 1rem;
+      align-items: center;
+    }
+    .banner__box {
+      @media screen and (max-width: 749px) {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+      .banner-stars {
+        .stars {
+          img {
+            transform: translateY(3px);
+          }
+        }
+        .text {
+          font-size: 1.6rem;
+        }
+      }
+      .banner__heading {
+        font-size: calc(var(--font-heading-scale) * 4rem);
+        max-width: 300px;
+        margin: auto;
+        @media screen and (min-width: 750px) {
+          font-size: calc(var(--font-heading-scale) * 6rem);
+          max-width: 100%;
+        }
+      }
+      .subtitle {
+        font-size: 1.8rem;
+        @media screen and (min-width: 750px) {
+          font-size: 2rem;
+        }
+      }
+      .banner__buttons {
+        a {
+          box-shadow: 0px 4px 4px 0px #00000040;
+          font-size: 1.8rem;
+          width: 25rem;
+          min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+          @media screen and (min-width: 750px) {
+            width: 30rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+            min-height: calc(5.5rem + var(--buttons-border-width) * 2);
+          }
+        }
+      }
+    }
+  }
+}
