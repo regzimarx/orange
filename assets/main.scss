@@ -234,7 +234,7 @@ CART
 SCROLLING ANIMATION
 ============================================= */
 
-@keyframes scrolling-text {
+@keyframes scrolling-texts {
   0% {
     transform: translate(0);
     -webkit-transform: translateX(0);
@@ -246,15 +246,15 @@ SCROLLING ANIMATION
   }
 }
 
-.scrolling-announcement-bar:hover .scrolling-text__inner {
+.scrolling-texts:hover .scrolling-text__inner {
   animation-play-state: paused;
 }
 
-.scrolling-announcement-bar .scrolling-text__inner {
+.scrolling-texts .scrolling-text__inner {
   visibility: visible;
   white-space: nowrap;
   display: inline-flex;
   margin: 0.15em 0;
-  animation: scrolling-text var(--move-speed) linear infinite;
+  animation: scrolling-texts var(--move-speed) linear infinite;
   animation-play-state: running;
 }
