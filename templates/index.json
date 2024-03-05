@@ -99,7 +99,7 @@
         "featured_collection_UPVRix"
       ],
       "settings": {
-        "custom_class": "",
+        "custom_class": "collections-list",
         "title": "Collections",
         "heading_size": "h1",
         "image_ratio": "square",
