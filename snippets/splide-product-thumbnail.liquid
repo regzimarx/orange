@@ -1,0 +1,8 @@
+{% assign media__id = media.id %}
+
+{{
+  media
+  | image_url: width: 416
+  | image_tag: loading: 'lazy', data-media-id: media__id, alt: featured_media.alt
+  | escape
+}}
