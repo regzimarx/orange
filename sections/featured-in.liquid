@@ -1,0 +1,63 @@
+<div
+  class="featured-in color-{{ section.settings.color_scheme }} background-{{ section.settings.background_style }}"
+>
+  <div class="page-width">
+    <div class="grid">
+      {% for block in section.blocks %}
+        <div class="grid__item">
+          <img src="{{ block.settings.image | image_url }}" alt="Logo" width="{{ block.settings.max_width }}" height="auto" style="min-width: {{ block.settings.min_width }}px; max-width: {{ block.settings.max_width }}px;" />
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured in",
+  "settings": [
+    {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "t:sections.all.colors.label",
+    "default": "scheme-1"
+  }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "min_width",
+          "label": "Image minimum width",
+          "min": 10,
+          "max": 1000,
+          "step": 10,
+          "default": 100
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "label": "Image maximum width",
+          "min": 10,
+          "max": 1000,
+          "step": 10,
+          "default": 100
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured in"
+    }
+  ]
+}
+{% endschema %}
