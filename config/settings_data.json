@@ -117,6 +117,7 @@
     "show_cart_note": true,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
+    "use_splide_product_media_gallery": true,
     "cross_sell_collection": "frontpage",
     "upsell_list": "hydrogen",
     "sections": {
