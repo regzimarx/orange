@@ -361,7 +361,8 @@ class MenuDrawer extends HTMLElement {
     );
     this.querySelectorAll(
       'button:not(.localization-selector):not(.country-selector__close-button):not(.country-filter__reset-button)'
-    ).forEach((button) => button.addEventListener('click', this.onCloseButtonClick.bind(this)));
+    ).forEach((button) => button.addEventListener('click', this.onCloseButtonClick.bind(this))
+    );
   }
 
   onKeyUp(event) {
@@ -1017,84 +1018,6 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant) return;
     if (!this.currentVariant.featured_media) return;
 
-    var splide_wrapper = document.querySelector('.splide_wrapper');
-
-    if (splide_wrapper) {
-      var main = new Splide('#main-carousel', {
-        type: 'fade',
-        rewind: false,
-        pagination: false,
-        arrows: false,
-        height: '100%',
-        autoHeight: true,
-      });
-
-      var thumbnails = new Splide('#thumbnail-carousel', {
-        fixedWidth: '70',
-        fixedHeight: '70',
-        gap: 10,
-        rewind: false,
-        pagination: false,
-        isNavigation: true,
-        direction: 'ttb',
-        height: '100%',
-        wheel: true,
-        breakpoints: {
-          749: {
-            fixedWidth: 60,
-            fixedHeight: 44,
-            direction: 'ltr',
-          },
-        },
-      });
-
-      var t = this.currentVariant.featured_media.id;
-
-      var main_slider = document.getElementById('main-carousel');
-      var thumbnail_slider = document.getElementById('thumbnail-carousel');
-
-      if (thumbnail_slider) {
-        var e = thumbnail_slider.querySelectorAll(
-          '.splide__track .splide__list .splide__slide'
-        );
-
-        var i = [];
-
-        e.forEach((x, index) => {
-          i.push(
-            parseInt(x.querySelector('img').getAttribute('data-media-id'))
-          );
-        });
-
-        main.mount();
-        thumbnails.mount();
-
-        main.go(i.indexOf(t));
-        thumbnails.go(i.indexOf(t));
-
-        function setThumbnailHeight() {
-          // Change the height of the thumbnail slider based on the height of the active image
-
-          var active_image = document.querySelector(
-            '#main-carousel .splide__track .splide__list .splide__slide.is-active img'
-          );
-          var active_image_height = active_image.clientHeight;
-          var thumbnail_slider = document.getElementById('thumbnail-carousel');
-          thumbnail_slider.style.height = `${active_image_height - 5}px`;
-        }
-
-        setThumbnailHeight();
-
-        main.on('visible', () => {
-          setThumbnailHeight();
-        });
-
-        thumbnails.on('resize', () => {
-          setThumbnailHeight();
-        });
-      }
-    }
-
     const mediaGalleries = document.querySelectorAll(`[id^="MediaGallery-${this.dataset.section}"]`);
     mediaGalleries.forEach((mediaGallery) =>
       mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true)
@@ -1183,7 +1106,11 @@ class VariantSelects extends HTMLElement {
     const requestedVariantId = this.currentVariant.id;
     const sectionId = this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section;
 
-    fetch(`${this.dataset.url}?variant=${requestedVariantId}`)
+    fetch(
+      `${this.dataset.url}?variant=${requestedVariantId}&section_id=${
+        this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section
+      }`
+    )
       .then((response) => response.text())
       .then((responseText) => {
         // prevent unnecessary ui changes from abandoned selections
@@ -1256,16 +1183,6 @@ class VariantSelects extends HTMLElement {
           },
         });
       });
-
-    // Update cart cross sell image
-
-    const product_images = this.parentNode.parentNode.querySelectorAll('.image img');
-    product_images.forEach((image) => {
-      image.classList.remove('is-active');
-      if (this.currentVariant.featured_media.id == image.dataset.mediaId) {
-        image.classList.add('is-active');
-      }
-    });
   }
 
   toggleAddButton(disable = true, text, modifyClass = true) {
